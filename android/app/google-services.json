@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "942989580898",
+    "project_id": "attendance-db5bd",
+    "storage_bucket": "attendance-db5bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942989580898:android:c8c83159d6be9477a90f3b",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942989580898-2rqpnopcgglksom5nbq98ear56pl4m2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMq5m8WqVx4uG1BT2TntAwC8XFY0xK4Qg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942989580898-2rqpnopcgglksom5nbq98ear56pl4m2t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "942989580898-l11c86g0rqduc1okm0e8e9t161588590.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.presenceapps.presensceApps"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942989580898:android:cb5852c3739128d1a90f3b",
+        "android_client_info": {
+          "package_name": "com.presenceapps.presensce_apps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942989580898-q5fbui0ja7mfpbu5idgglsbgpin8nfkc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.presenceapps.presensce_apps",
+            "certificate_hash": "41cddd9c711e876ce4dd7923b39e62548f1cc806"
+          }
+        },
+        {
+          "client_id": "942989580898-2rqpnopcgglksom5nbq98ear56pl4m2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMq5m8WqVx4uG1BT2TntAwC8XFY0xK4Qg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942989580898-2rqpnopcgglksom5nbq98ear56pl4m2t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "942989580898-l11c86g0rqduc1okm0e8e9t161588590.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.presenceapps.presensceApps"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
