@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../utilities/colors.dart';
-import 'text_filed_container.dart';
+import '../pages/login/components/text_filed_container.dart';
+import '../utilities/colors.dart';
 
 class RoundedTextField extends StatelessWidget {
   const RoundedTextField({

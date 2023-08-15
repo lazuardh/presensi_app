@@ -12,6 +12,6 @@ class AppPage {
     RouteName.welcome: (context) => const WelcomeScreen(),
     RouteName.login: (context) => const LoginScreen(),
     RouteName.register: (context) => const RegisterScreen(),
-    RouteName.homeScreen: (context) => const HomeScreen(),
+    RouteName.home: (context) => const HomeScreen(),
   };
 }
