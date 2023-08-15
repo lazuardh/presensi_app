@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/routes/name_routes.dart';
 import 'package:flutter_application_1/presentation/utilities/colors.dart';
 import 'package:flutter_application_1/presentation/utilities/text_styles.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -52,7 +53,10 @@ class _IntroductionState extends State<Introduction> {
               decoration: pageDecoration,
             )
           ],
-          onDone: () {},
+          onDone: () => Navigator.pushReplacementNamed(
+            context,
+            RouteName.welcome,
+          ),
           showSkipButton: true,
           showNextButton: true,
           showDoneButton: true,
