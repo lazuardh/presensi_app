@@ -8,21 +8,26 @@ class RoundedTextField extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.onChanged,
+    required this.icon,
+    required this.controller,
   });
 
   final String hintText;
+  final IconData icon;
   final ValueChanged<String> onChanged;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
       child: TextField(
+        controller: controller,
         obscureText: false,
         onChanged: onChanged,
         decoration: InputDecoration(
           hintText: hintText,
-          icon: const Icon(
-            Icons.person,
+          icon: Icon(
+            icon,
             color: darkPurple,
           ),
           border: InputBorder.none,

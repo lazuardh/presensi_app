@@ -1,8 +1,29 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/firebase_options.dart';
+import 'package:flutter_application_1/presentation/data/service/add_pegawai.dart';
+import 'package:flutter_application_1/presentation/data/service/authentication.dart';
 import 'package:flutter_application_1/presentation/routes/page_routes.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => AddEmployeeProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => AuthenticationService(),
+        )
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -34,7 +55,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: AppPage.pages,
-      initialRoute: '/',
+      initialRoute: '/welcome',
     );
   }
 }

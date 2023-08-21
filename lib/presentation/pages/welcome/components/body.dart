@@ -4,8 +4,8 @@ import 'package:flutter_application_1/presentation/utilities/colors.dart';
 import 'package:flutter_application_1/presentation/utilities/text_styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../widgets/rounded_button.dart';
 import 'background.dart';
-import 'rounded_button.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});

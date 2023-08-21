@@ -8,16 +8,19 @@ class RoundedPasswordFiled extends StatelessWidget {
     super.key,
     required this.textHint,
     required this.onChanged,
+    required this.controller,
   });
 
   final String textHint;
   final ValueChanged<String> onChanged;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
       child: TextField(
-        obscureText: true,
+        controller: controller,
+        obscureText: false,
         onChanged: onChanged,
         decoration: InputDecoration(
           hintText: textHint,
