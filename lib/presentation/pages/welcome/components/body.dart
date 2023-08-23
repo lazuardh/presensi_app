@@ -30,18 +30,22 @@ class Body extends StatelessWidget {
               context,
               RouteName.login,
             ),
-            text: "LOGIN",
             backgroundColor: darkPurple,
-            textColor: white,
+            child: Text(
+              "LOGIN",
+              style: text4(white, bold),
+            ),
           ),
           RoundedButton(
             onPress: () => Navigator.pushNamed(
               context,
               RouteName.register,
             ),
-            text: "REGISTER",
             backgroundColor: lightGrey,
-            textColor: dark,
+            child: Text(
+              "LOGIN",
+              style: text4(white, bold),
+            ),
           )
         ],
       ),

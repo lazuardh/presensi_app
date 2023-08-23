@@ -1,23 +1,33 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AuthenticationService extends ChangeNotifier {
   FirebaseAuth authenticate = FirebaseAuth.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
   String errorMessage = "";
 
   bool? _isVerify;
   bool? get isVerify => _isVerify;
 
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passController = TextEditingController();
+  bool? _isLoading;
+  bool? get isLoading => _isLoading;
+
+  bool? _isLogin;
+  bool? get isLogin => _isLogin;
+
+  String? _role;
+  String? get role => _role;
 
   Future login(String email, String password) async {
     _isVerify = null;
+    _isLoading = true;
+    notifyListeners();
 
-    if (emailController.text.isEmpty) {
+    if (email.isEmpty) {
       errorMessage = "email Tidak Boleh Kosong";
       return errorMessage;
-    } else if (passController.text.isEmpty) {
+    } else if (password.isEmpty) {
       errorMessage = "Pasword Tidak Boleh Kosong";
       return errorMessage;
     }
@@ -25,8 +35,8 @@ class AuthenticationService extends ChangeNotifier {
     try {
       UserCredential userCredential =
           await authenticate.signInWithEmailAndPassword(
-        email: emailController.text,
-        password: passController.text,
+        email: email,
+        password: password,
       );
 
       print("isLogged $userCredential");
@@ -36,6 +46,7 @@ class AuthenticationService extends ChangeNotifier {
       }
 
       errorMessage = "";
+      _isLoading = false;
       notifyListeners();
       return null;
     } on FirebaseAuthException catch (error) {
@@ -50,5 +61,13 @@ class AuthenticationService extends ChangeNotifier {
       print("erro kntl: $error");
       throw Exception(error);
     }
+  }
+
+  Future roleUser() async {
+    final uid = authenticate.currentUser!.uid;
+
+    final userData = await firestore.collection('pegawai').doc(uid).get();
+
+    _role = userData.data()?['role'];
   }
 }

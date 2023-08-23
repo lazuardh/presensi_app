@@ -7,7 +7,7 @@ const FontWeight semibold = FontWeight.w600;
 const FontWeight bold = FontWeight.w700;
 
 TextStyle heading1(colorText, fontWeight) {
-  return TextStyle(color: colorText, fontSize: 61, fontWeight: fontWeight);
+  return TextStyle(color: colorText, fontSize: 25, fontWeight: fontWeight);
 }
 
 TextStyle text1(colorText, fontWeight) {

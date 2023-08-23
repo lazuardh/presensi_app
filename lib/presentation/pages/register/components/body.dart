@@ -40,10 +40,12 @@ class Body extends StatelessWidget {
             onChanged: (value) {},
           ),
           RoundedButton(
-            text: "REGISTER",
             onPress: () {},
             backgroundColor: darkPurple,
-            textColor: white,
+            child: Text(
+              "REGISTER",
+              style: text4(white, bold),
+            ),
           ),
           AlreadyHaveAccount(
             login: false,

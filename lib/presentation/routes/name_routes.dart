@@ -3,6 +3,9 @@ abstract class RouteName {
   static const welcome = '/welcome';
   static const login = '/login';
   static const register = '/register';
+  static const newPassword = '/newPassword';
+  static const forgotPassword = '/forgotPassword';
+  static const navigation = '/navigation';
   static const pegawai = '/pegawai';
   static const home = '/home';
 }

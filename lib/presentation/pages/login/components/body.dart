@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/data/service/authentication.dart';
 import 'package:flutter_application_1/presentation/pages/login/components/or_divider.dart';
 import 'package:flutter_application_1/presentation/routes/name_routes.dart';
 import 'package:flutter_application_1/presentation/utilities/colors.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_application_1/presentation/utilities/text_styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
+import '../../../data/service/authentication.dart';
 import '../../../widgets/already_have_account.dart';
 import '../../../widgets/rounded_button.dart';
 import '../../../widgets/rounded_password_field.dart';
@@ -22,6 +22,9 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -60,17 +63,25 @@ class _BodyState extends State<Body> {
 
     void handleLogin() async {
       String? errorMessage = await auth.login(
-        auth.emailController.text,
-        auth.passController.text,
+        emailController.text,
+        passController.text,
       );
 
       if (errorMessage == null) {
         if (auth.isVerify == true) {
-          Navigator.pushNamedAndRemoveUntil(
-            context,
-            RouteName.pegawai,
-            (route) => false,
-          );
+          if (passController.text == "password") {
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              RouteName.newPassword,
+              (route) => false,
+            );
+          } else {
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              RouteName.navigation,
+              (route) => false,
+            );
+          }
         } else {
           showEmailNotVerifiedDialog(context);
         }
@@ -94,28 +105,34 @@ class _BodyState extends State<Body> {
               height: size.height * 0.35,
             ),
             RoundedTextField(
-              controller: auth.emailController,
+              controller: emailController,
               icon: Icons.person,
               hintText: 'Your Email',
               onChanged: (value) {},
             ),
             RoundedPasswordFiled(
-              controller: auth.passController,
+              controller: passController,
               textHint: 'Your Password',
               onChanged: (value) {},
             ),
             RoundedButton(
-              text: "LOGIN",
               onPress: () => handleLogin(),
               backgroundColor: darkPurple,
-              textColor: white,
+              child: auth.isLoading == true
+                  ? Text(
+                      "PROCESS",
+                      style: text4(white, bold),
+                    )
+                  : Text(
+                      "LOGIN",
+                      style: text4(white, bold),
+                    ),
             ),
             AlreadyHaveAccount(
               login: true,
-              onPress: () => Navigator.pushNamedAndRemoveUntil(
+              onPress: () => Navigator.pushNamed(
                 context,
-                RouteName.register,
-                (route) => false,
+                RouteName.forgotPassword,
               ),
             ),
             const OrDivider(),

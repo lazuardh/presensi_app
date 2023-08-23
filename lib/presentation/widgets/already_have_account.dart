@@ -19,13 +19,13 @@ class AlreadyHaveAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          login ? "Tidak punya Account ? " : "Sudah punya Account ? ",
+          login ? "" : "Sudah punya Account ? ",
           style: text4(dark, regular),
         ),
         GestureDetector(
           onTap: onPress,
           child: Text(
-            login ? "Register" : "Login",
+            login ? "Lupa Password" : "Login",
             style: text4(darkPurple, bold),
           ),
         ),

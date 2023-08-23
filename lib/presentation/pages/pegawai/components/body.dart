@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/presentation/data/service/add_pegawai.dart';
 import 'package:flutter_application_1/presentation/utilities/colors.dart';
+import 'package:flutter_application_1/presentation/utilities/text_styles.dart';
 import 'package:flutter_application_1/presentation/widgets/rounded_button.dart';
 import 'package:flutter_application_1/presentation/widgets/rounded_text_field.dart';
 import 'package:provider/provider.dart';
@@ -52,12 +53,14 @@ class _BodyState extends State<Body> {
               onChanged: (value) {},
             ),
             RoundedButton(
-              text: "ADD PEGAWAI",
               onPress: () {
                 employee.addEmployee();
               },
               backgroundColor: lightPurple,
-              textColor: white,
+              child: Text(
+                "ADD PEGAWAI",
+                style: text4(white, bold),
+              ),
             )
           ],
         ),

@@ -30,7 +30,9 @@ class AddEmployeeProvider extends ChangeNotifier {
             "nip": nipContr.text,
             "nama": namaContr.text,
             "email": emailContr.text,
+            "posisi": "Mobile Developer",
             "uid": uid,
+            "role": "pegawai",
             "createdAt": DateTime.now().toIso8601String(),
           });
 
