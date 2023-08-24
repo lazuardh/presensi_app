@@ -5,6 +5,7 @@ import 'package:flutter_application_1/presentation/pages/password/forgot/forgot_
 import 'package:flutter_application_1/presentation/pages/password/new/new_password.dart';
 import 'package:flutter_application_1/presentation/pages/pegawai/pegawai_screen.dart';
 import 'package:flutter_application_1/presentation/pages/register/register_screen.dart';
+import 'package:flutter_application_1/presentation/pages/update/profile/update_profile_Screen.dart';
 
 import '../pages/welcome/welocme_screen.dart';
 import '../routes/name_routes.dart';
@@ -18,6 +19,7 @@ class AppPage {
     RouteName.newPassword: (context) => const NewPassword(),
     RouteName.forgotPassword: (context) => const ForgotPassword(),
     RouteName.navigation: (context) => const NavigationScreen(),
+    RouteName.updateProfile: (context) => const UpdateProfile(),
     RouteName.pegawai: (context) => const PegawaiScreen(),
     RouteName.home: (context) => const HomeScreen(),
   };

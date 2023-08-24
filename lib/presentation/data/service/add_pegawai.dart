@@ -33,6 +33,7 @@ class AddEmployeeProvider extends ChangeNotifier {
             "posisi": "Mobile Developer",
             "uid": uid,
             "role": "pegawai",
+            "alamat": null,
             "createdAt": DateTime.now().toIso8601String(),
           });
 

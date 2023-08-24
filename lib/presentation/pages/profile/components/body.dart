@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
         future: profileProvider.getDataUserProfile(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            Center(
+            const Center(
               child: CircularProgressIndicator(),
             );
           }
@@ -46,11 +46,14 @@ class Body extends StatelessWidget {
                     "${userProfile['posisi']}",
                     style: text3(dark, regular),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   ListTile(
-                    onTap: () {},
+                    onTap: () => Navigator.pushNamed(
+                      context,
+                      RouteName.updateProfile,
+                    ),
                     // tileColor: lightGrey,
                     leading: const CircleAvatar(
                       backgroundColor: purple200,
